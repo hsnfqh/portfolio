@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Hasan Faqih Aulia - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1f2e 0%, #0f1525 50%, #090d1a 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: gradient-x 3s ease infinite;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes gradient-x {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-delay {
+            animation: float 6s ease-in-out 1s infinite;
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-left-width: 8px;
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+            height: 320px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        
+        .ribbon::before {
+            content: attr(data-rank);
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            width: 150%;
+            height: 28px;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: white;
+            z-index: 1;
+        }
+        
+        .ribbon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150%;
+            height: 40px;
+            transform: rotate(45deg) translateY(-20px);
+            transform-origin: bottom left;
+        }
+        
+        .ribbon-blue::after {
+            background: linear-gradient(45deg, #3b82f6, #06b6d4);
+            box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+        }
+        
+        .ribbon-indigo::after {
+            background: linear-gradient(45deg, #4f46e5, #06b6d4);
+            box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+        }
+        
+        .ribbon-amber::after {
+            background: linear-gradient(45deg, #d97706, #92400e);
+            box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3);
+        }
+        
+        .ribbon-green::after {
+            background: linear-gradient(45deg, #10b981, #059669);
+            box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+        }
+        
+        .tech-tag {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border: 1px solid transparent;
+        }
+        
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Section spacing */
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white">
+    
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-effect py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Ganti logo dengan teks Portfolio -->
+            <div class="flex items-center space-x-2">
+                <div class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+                    Portfolio
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
+                <a href="#portfolio" class="hover:text-blue-400 transition-colors">Portfolio</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#achievements" class="hover:text-blue-400 transition-colors">Achievements</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="/cv.pdf" download class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center">
+                    <i class="fas fa-download mr-2"></i> Download CV
+                </a>
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="py-20 md:py-32 relative overflow-hidden">
+        <!-- HAPUS ELEMEN BLUR YANG MENGANGGU -->
+        <!-- <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl floating"></div> -->
+        <!-- <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl floating-delay"></div> -->
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-7/12 mb-12 lg:mb-0">
+                    <div class="inline-flex items-center space-x-2 bg-blue-900/30 px-4 py-2 rounded-full mb-6">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        <span class="text-sm font-medium">Building digital solutions with precision and innovation</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                        <span class="block text-gray-300 mb-4">I'm</span>
+                        <span class="gradient-text">Ahmad Hasan<br>Faqih Aulia</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-10 max-w-2xl">
+                        A <span class="font-semibold text-amber-400">Software Engineer</span> currently studying at 
+                        <span class="font-semibold text-blue-400">IPB University</span>. 
+                        Focused on developing effective digital solutions with a modern technology approach.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#experience" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center">
+                            View Experience
+                            <i class="fas fa-arrow-right ml-3"></i>
+                        </a>
+                        <a href="#portfolio" class="px-8 py-4 glass-effect border border-gray-700 hover:border-blue-500 rounded-lg font-semibold text-lg transition-all">
+                            View Portfolio
+                        </a>
+                    </div>
+                    
+                    <!-- Skills Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div class="group glass-effect p-5 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                            <div class="flex flex-col items-center text-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i class="fas fa-palette text-white text-xl"></i>
+                                </div>
+                                <span class="font-semibold text-gray-300 group-hover:text-blue-400 transition-colors duration-300">Graphic Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group glass-effect p-5 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                            <div class="flex flex-col items-center text-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i class="fas fa-code text-white text-xl"></i>
+                                </div>
+                                <span class="font-semibold text-gray-300 group-hover:text-purple-400 transition-colors duration-300">Development</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group glass-effect p-5 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                            <div class="flex flex-col items-center text-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i class="fas fa-cogs text-white text-xl"></i>
+                                </div>
+                                <span class="font-semibold text-gray-300 group-hover:text-blue-400 transition-colors duration-300">Problem-Solving</span>
+                            </div>
+                        </div>
+
+                        <div class="group glass-effect p-5 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                            <div class="flex flex-col items-center text-center gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i class="fas fa-users text-white text-xl"></i>
+                                </div>
+                                <span class="font-semibold text-gray-300 group-hover:text-purple-400 transition-colors duration-300">Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Profile -->
+                <div class="lg:w-5/12 flex justify-center lg:justify-end">
+                    <div class="w-full max-w-md relative">
+                        <!-- Profile Frame -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-20 animate-pulse"></div>
+                        
+                        <div class="relative glass-effect rounded-2xl p-8 shadow-2xl border border-gray-700/50">
+                            <!-- Profile Photo -->
+                            <div class="mb-8 relative">
+                                <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-md opacity-30"></div>
+                                <div class="relative rounded-2xl overflow-hidden border-2 border-blue-500/30 shadow-2xl">
+                                    <img src="{{ asset('images/foto1.png') }}" 
+                                         alt="Ahmad Hasan Faqih Aulia"
+                                         class="w-full aspect-square object-cover object-center"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    
+                                    <div class="w-full aspect-square hidden items-center justify-center bg-gradient-to-br from-blue-700 to-purple-800">
+                                        <i class="fas fa-user text-white text-6xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Name and Title -->
+                            <div class="mb-8 text-center relative">
+                                <h3 class="text-2xl font-bold text-gray-300 mb-2">
+                                    Ahmad Hasan Faqih Aulia 
+                                </h3>
+                                <p class="text-xl gradient-text font-semibold">
+                                    Software Engineer
+                                </p>
+                            </div>
+                            
+                            <!-- University Info -->
+                            <div class="glass-effect p-6 rounded-xl border border-gray-700/50">
+                                <div class="text-center mb-4">
+                                    <h4 class="text-lg font-semibold text-gray-300">IPB University</h4>
+                                    <p class="text-gray-400">Software Engineering Technology</p>
+                                </div>
+                                <div class="flex justify-center gap-4">
+                                    <span class="text-sm px-4 py-2 bg-blue-900/30 text-blue-300 rounded-lg border border-blue-700/50">
+                                        <i class="fas fa-book mr-2"></i>
+                                        Active Student
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <!-- Subtitle -->
+                <div class="flex items-center justify-center gap-6 mb-6">
+                    <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-purple-500"></div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-graduation-cap text-blue-500 text-xl"></i>
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                            EDUCATION PATH & COMPETENCIES
+                        </span>
+                        <i class="fas fa-book text-purple-500 text-xl"></i>
+                    </div>
+                    <div class="w-16 h-[2px] bg-gradient-to-l from-transparent via-blue-500 to-purple-500"></div>
+                </div>
+                
+                <!-- Main Title -->
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">
+                        EDUCATION PATH
+                    </span>
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    Educational journey and technical skills that shape my development competencies
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left Column - Education Timeline -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-300 pb-3 border-b border-blue-800">
+                        <i class="fas fa-university text-blue-500 mr-3"></i>
+                        Education History
+                    </h3>
+                    
+                    <!-- Timeline Container -->
+                    <div class="relative pl-10 before:absolute before:left-4 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-blue-600 before:via-purple-500 before:to-blue-400">
+                        <!-- SMPN 7 Jakarta -->
+                        <div class="relative mb-10 pl-8">
+                            <div class="absolute -left-12 top-0 w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-500 rounded-full border-4 border-gray-800 shadow-xl flex items-center justify-center">
+                                <i class="fas fa-school text-white text-xs"></i>
+                            </div>
+                            <div class="glass-effect rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/50 group">
+                                <div class="flex items-start gap-5">
+                                    <div class="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-school text-white text-xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-xl font-bold text-gray-300 mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                                            SMPN 7 Jakarta
+                                        </h4>
+                                        <div class="flex items-center gap-3 text-gray-400 mb-3">
+                                            <i class="fas fa-calendar-alt text-blue-500"></i>
+                                            <span>2017 - 2020</span>
+                                        </div>
+                                        <p class="text-gray-400 leading-relaxed">Completed junior high school education with academic and extracurricular achievements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SMKN 14 Jakarta -->
+                        <div class="relative mb-10 pl-8">
+                            <div class="absolute -left-12 top-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full border-4 border-gray-800 shadow-xl flex items-center justify-center">
+                                <i class="fas fa-palette text-white text-xs"></i>
+                            </div>
+                            <div class="glass-effect rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/50 group">
+                                <div class="flex items-start gap-5">
+                                    <div class="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-video text-white text-xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-xl font-bold text-gray-300 mb-2 group-hover:text-purple-300 transition-colors duration-300">
+                                            SMKN 14 Jakarta
+                                        </h4>
+                                        <p class="text-blue-400 font-medium mb-2">
+                                            <i class="fas fa-certificate mr-2"></i>
+                                            Multimedia
+                                        </p>
+                                        <div class="flex items-center gap-3 text-gray-400 mb-3">
+                                            <i class="fas fa-calendar-alt text-blue-500"></i>
+                                            <span>2020 - 2023</span>
+                                        </div>
+                                        <p class="text-gray-400 leading-relaxed">Specialization in multimedia production including graphic design, video editing, and digital content creation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IPB University -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-12 top-0 w-8 h-8 bg-gradient-to-br from-blue-700 to-purple-600 rounded-full border-4 border-gray-800 shadow-xl flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-white text-xs"></i>
+                            </div>
+                            <div class="glass-effect rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/50 group">
+                                <div class="flex items-start gap-5">
+                                    <div class="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-blue-800 to-blue-900 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-university text-white text-xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-xl font-bold text-gray-300 mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                                            IPB University
+                                        </h4>
+                                        <p class="text-blue-400 font-medium mb-2">
+                                            <i class="fas fa-laptop-code mr-2"></i>
+                                            Software Engineering Technology
+                                        </p>
+                                        <div class="flex items-center gap-3 text-gray-400 mb-3">
+                                            <i class="fas fa-calendar-alt text-blue-500"></i>
+                                            <span>2023 - Present</span>
+                                        </div>
+                                        <p class="text-gray-400 leading-relaxed">Currently pursuing education in Software Engineering Technology with a focus on full-stack development.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-300 pb-3 border-b border-blue-800">
+                        <i class="fas fa-tools text-blue-500 mr-3"></i>
+                        Skills & Technology
+                    </h3>
+                    
+                    <!-- Skills Grid -->
+                    <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-4">
+                        <?php
+                            $skills = [
+                                ['name' => 'Java', 'color' => 'from-orange-700 to-red-600', 'icon' => 'fab fa-java', 'delay' => '0'],
+                                ['name' => 'JavaScript', 'color' => 'from-yellow-600 to-yellow-400', 'icon' => 'fab fa-js', 'delay' => '100'],
+                                ['name' => 'Tailwind', 'color' => 'from-cyan-600 to-blue-600', 'icon' => 'fas fa-wind', 'delay' => '200'],
+                                ['name' => 'Laravel', 'color' => 'from-red-600 to-orange-600', 'icon' => 'fab fa-laravel', 'delay' => '300'],
+                                ['name' => 'React', 'color' => 'from-blue-500 to-cyan-500', 'icon' => 'fab fa-react', 'delay' => '400'],
+                                ['name' => 'Blender', 'color' => 'from-orange-600 to-yellow-600', 'icon' => 'fas fa-cube', 'delay' => '500'],
+                                ['name' => 'Unity', 'color' => 'from-gray-700 to-gray-500', 'icon' => 'fas fa-gamepad', 'delay' => '600'],
+                                ['name' => 'Figma', 'color' => 'from-blue-600 to-blue-400', 'icon' => 'fas fa-palette', 'delay' => '700'],
+                                ['name' => 'Canvas', 'color' => 'from-green-600 to-green-400', 'icon' => 'fas fa-paint-brush', 'delay' => '800'],
+                                ['name' => 'Photoshop', 'color' => 'from-blue-700 to-blue-500', 'icon' => 'fas fa-image', 'delay' => '900'],
+                                ['name' => 'Premiere', 'color' => 'from-blue-700 to-blue-500', 'icon' => 'fas fa-video', 'delay' => '1000'],
+                                ['name' => 'After Effect', 'color' => 'from-indigo-700 to-blue-600', 'icon' => 'fas fa-film', 'delay' => '1100'],
+                            ];
+                        ?>
+                        
+                        <?php foreach($skills as $skill): ?>
+                        <div class="animate-float animation-delay-<?php echo $skill['delay']; ?>">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br <?php echo $skill['color']; ?> rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br <?php echo $skill['color']; ?> rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="<?php echo $skill['icon']; ?> text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300"><?php echo $skill['name']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    
+                    <!-- Skill Levels -->
+                    <div class="mt-12 glass-effect rounded-2xl p-6 border border-gray-700/50">
+                        <h4 class="text-lg font-semibold text-gray-300 mb-4 flex items-center gap-2">
+                            <i class="fas fa-chart-line text-blue-500"></i>
+                            Proficiency Level
+                        </h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-400">Frontend Development</span>
+                                    <span class="text-sm text-blue-400">90%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-blue-600 to-purple-500 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-400">Backend Development</span>
+                                    <span class="text-sm text-blue-400">85%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-blue-600 to-purple-500 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm text-gray-400">UI/UX Design</span>
+                                    <span class="text-sm text-blue-400">95%</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-blue-600 to-purple-500 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20">
+    <div class="container mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <!-- Subtitle -->
+            <div class="flex items-center justify-center gap-6 mb-6">
+                <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-purple-500"></div>
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-briefcase text-blue-500 text-xl"></i>
+                    <span class="text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                        PORTFOLIO
+                    </span>
+                    <i class="fas fa-project-diagram text-purple-500 text-xl"></i>
+                </div>
+                <div class="w-16 h-[2px] bg-gradient-to-l from-transparent via-blue-500 to-purple-500"></div>
+            </div>
+            
+            <!-- Main Title -->
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="gradient-text">
+                    PROJECT EXPERIENCE
+                </span>
+            </h2>
+            
+            <!-- Description -->
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+                Projects I have developed throughout my career journey
+            </p>
+            
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button data-category="all" class="category-tab active px-8 py-3.5 bg-gradient-to-r from-blue-700 to-blue-800 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-blue-600">
+                    <i class="fas fa-layer-group mr-2"></i>
+                    All Projects
+                </button>
+                <button data-category="website" class="category-tab px-8 py-3.5 glass-effect text-gray-300 font-semibold rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-globe text-blue-400"></i>
+                        Website
+                    </span>
+                </button>
+                <button data-category="application" class="category-tab px-8 py-3.5 glass-effect text-gray-300 font-semibold rounded-xl border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-mobile-alt text-purple-400"></i>
+                        Application
+                    </span>
+                </button>
+                <button data-category="design" class="category-tab px-8 py-3.5 glass-effect text-gray-300 font-semibold rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-paint-brush text-blue-400"></i>
+                        Design
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Aplikasi 1 - FRUIT CLASH -->
+            <div class="project-item website" data-category="application">
+                <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-blue-500/50 card-hover">
+                    <!-- Badge -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge flex items-center gap-1 px-3 py-1 bg-blue-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-blue-700/30">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                            Application
+                        </span>
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Project Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                            <img src="{{ asset('images/fruitclash.png') }}" 
+                                alt="Fruit Clash Application Preview"
+                                class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Project Title -->
+                        <div class="mb-4">
+                            <h4 class="text-xl font-bold text-gray-300 group-hover:text-blue-300 transition-colors duration-300">
+                                FRUIT CLASH
+                            </h4>
+                            <p class="text-sm text-gray-400 font-medium mt-1">
+                                AR-Powered Educational Card Game
+                            </p>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            Fruit Clash is an interactive card game that makes learning English vocabulary and fruit knowledge fun for kids. Enhanced with AR for immersive educational play.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-lg text-xs font-medium border border-amber-700/30 hover:border-amber-500/50 transition-colors duration-300">
+                                Blender
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                                Unity
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-lg text-xs font-medium border border-amber-700/30 hover:border-amber-500/50 transition-colors duration-300">
+                                Adobe Illustrator
+                            </span>
+                        </div>
+                        
+                        <!-- View Details Button -->
+                        <a href="#" 
+                           class="inline-flex items-center gap-3 text-blue-400 font-medium text-sm group-hover:text-blue-300 group-hover:gap-4 transition-all duration-300">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Project - BEST GRAPHIC DESIGN -->
+            <div class="project-item design" data-category="design">
+                <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-pink-500/50 card-hover">
+                    <!-- Badge -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge flex items-center gap-1 px-3 py-1 bg-pink-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-pink-700/30">
+                            <i class="fas fa-paint-brush text-white"></i>
+                            Design
+                        </span>
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Project Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                            <img src="{{ asset('images/portfolio1.png') }}" 
+                                 alt="Best Graphic Design Preview"
+                                 class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Project Title -->
+                        <div class="mb-4">
+                            <h4 class="text-xl font-bold text-gray-300 group-hover:text-pink-300 transition-colors duration-300">
+                                GRAPHIC DESIGN
+                            </h4>
+                            <p class="text-sm text-gray-400 font-medium mt-1">
+                                Selected Best Graphic Design Projects
+                            </p>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            Creative digital portfolio highlighting innovative design projects, branding solutions, and artistic digital creations with modern visual appeal.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag px-3 py-1.5 bg-pink-900/30 text-pink-300 rounded-lg text-xs font-medium border border-pink-700/30 hover:border-pink-500/50 transition-colors duration-300">
+                                <i class="fab fa-figma mr-1.5"></i>Figma
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                                <i class="fab fa-adobe mr-1.5"></i>Adobe 
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-orange-900/30 text-orange-300 rounded-lg text-xs font-medium border border-orange-700/30 hover:border-orange-500/50 transition-colors duration-300">
+                                <i class="fas fa-palette mr-1.5"></i>Adobe Family
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-red-900/30 text-red-300 rounded-lg text-xs font-medium border border-red-700/30 hover:border-red-500/50 transition-colors duration-300">
+                                <i class="fab fa-photoshop mr-1.5"></i>Blender
+                            </span>
+                        </div>
+                        
+                        <!-- View Details Button -->
+                        <a href="#" 
+                           class="inline-flex items-center gap-3 text-pink-400 font-medium text-sm group-hover:text-pink-300 group-hover:gap-4 transition-all duration-300">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplikasi 2 - ARKA GUARDIAN -->
+            <div class="project-item design" data-category="application">
+                <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-purple-500/50 card-hover">
+                    <!-- Badge -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge flex items-center gap-1 px-3 py-1 bg-blue-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-blue-700/30">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                            Application
+                        </span>
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Project Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                            <img src="{{ asset('images/arka.png') }}" 
+                                alt="Website Roblox Topic Indonesia Design Preview"
+                                class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Project Title -->
+                        <div class="mb-4">
+                            <h4 class="text-xl font-bold text-gray-300 group-hover:text-purple-300 transition-colors duration-300">
+                                ARKA GUARDIAN
+                            </h4>
+                            <p class="text-sm text-gray-400 font-medium mt-1">
+                                Game Educational Supporting SDG 13 & SDG 15
+                            </p>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            Educational game promoting climate action and land conservation through forest protection challenges and environmental quizzes.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                           <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                                Unity
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-lg text-xs font-medium border border-amber-700/30 hover:border-amber-500/50 transition-colors duration-300">
+                                Adobe Illustrator
+                            </span>
+                        </div>
+                        
+                        <!-- View Details Button -->
+                        <a href="#" 
+                           class="inline-flex items-center gap-3 text-purple-400 font-medium text-sm group-hover:text-purple-300 group-hover:gap-4 transition-all duration-300">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplikasi 3 - CAREER PARTNER -->
+            <div class="project-item website" data-category="application">
+                <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-green-500/50 card-hover">
+    
+                     <!-- Badge -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge flex items-center gap-1 px-3 py-1 bg-blue-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-blue-700/30">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                            Application
+                        </span>
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Project Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                            <img src="{{ asset('images/career.png') }}" 
+                                alt="Cooperative Management Application Preview"
+                                class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Project Title -->
+                        <div class="mb-4">
+                            <h4 class="text-xl font-bold text-gray-300 group-hover:text-green-300 transition-colors duration-300">
+                                CAREER PARTNER
+                            </h4>
+                            <p class="text-sm text-gray-400 mt-1">
+                                AI Career Guidance Platform
+                            </p>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                           Digital career guidance system with AI recommendations for internships and volunteer opportunities, supporting personalized career development.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                              <span class="tech-tag px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-lg text-xs font-medium border border-amber-700/30 hover:border-amber-500/50 transition-colors duration-300">
+                                Android Studio
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                                Figma
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-amber-900/30 text-amber-300 rounded-lg text-xs font-medium border border-amber-700/30 hover:border-amber-500/50 transition-colors duration-300">
+                                XML
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-indigo-900/30 text-indigo-300 rounded-lg text-xs font-medium border border-indigo-700/30 hover:border-indigo-500/50 transition-colors duration-300">
+                                Kotlin
+                            </span>
+                        </div>
+                        
+                        <!-- View Details Button -->
+                        <a href="#" 
+                           class="inline-flex items-center gap-3 text-green-400 font-medium text-sm group-hover:text-green-300 group-hover:gap-4 transition-all duration-300">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Project - PAUD BOUGENVILLE -->
+            <div class="project-item website" data-category="website">
+                <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-cyan-500/50 card-hover">
+                    <!-- Badge -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge flex items-center gap-1 px-3 py-1 bg-cyan-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-cyan-700/30">
+                            <i class="fas fa-globe text-white"></i>
+                            Website
+                        </span>
+                    </div>
+                    
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Project Image -->
+                        <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                            <img src="{{ asset('images/web.png') }}" 
+                                 alt="Paud Bougenville Website Preview"
+                                 class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Project Title -->
+                        <div class="mb-4">
+                            <h4 class="text-xl font-bold text-gray-300 group-hover:text-cyan-300 transition-colors duration-300">
+                                PAUD BOUGENVILLE
+                            </h4>
+                            <p class="text-sm text-gray-400 font-medium mt-1">
+                                Early Childhood Education Website
+                            </p>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            A responsive website for Paud Bougenville institution featuring information about programs, activities, registration system, and parent communication portal.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag px-3 py-1.5 bg-cyan-900/30 text-cyan-300 rounded-lg text-xs font-medium border border-cyan-700/30 hover:border-cyan-500/50 transition-colors duration-300">
+                                <i class="fab fa-html5 mr-1.5"></i>PHP
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                                <i class="fab fa-css3-alt mr-1.5"></i>Laravel
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-yellow-900/30 text-yellow-300 rounded-lg text-xs font-medium border border-yellow-700/30 hover:border-yellow-500/50 transition-colors duration-300">
+                                <i class="fab fa-js-square mr-1.5"></i>JavaScript
+                            </span>
+                            <span class="tech-tag px-3 py-1.5 bg-green-900/30 text-green-300 rounded-lg text-xs font-medium border border-green-700/30 hover:border-green-500/50 transition-colors duration-300">
+                                <i class="fas fa-database mr-1.5"></i>MySQL
+                            </span>
+                        </div>
+                        
+                        <!-- View Details Button -->
+                        <a href="#" 
+                           class="inline-flex items-center gap-3 text-cyan-400 font-medium text-sm group-hover:text-cyan-300 group-hover:gap-4 transition-all duration-300">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Project - BEM FEB UNAIR -->
+<div class="project-item website" data-category="website">
+    <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-indigo-500/50 card-hover">
+        <!-- Badge -->
+        <div class="absolute top-4 right-4 z-10">
+            <span class="badge flex items-center gap-1 px-3 py-1 bg-indigo-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-indigo-700/30">
+                <i class="fas fa-globe text-white"></i>
+                Website
+            </span>
+        </div>
+        
+        <!-- Project Content -->
+        <div class="p-6">
+            <!-- Project Image -->
+            <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                <img src="{{ asset('images/bem.png') }}" 
+                     alt="BEM FEB UNAIR Website Preview"
+                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                     onerror="this.src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <!-- Project Title -->
+            <div class="mb-4">
+                <h4 class="text-xl font-bold text-gray-300 group-hover:text-indigo-300 transition-colors duration-300">
+                    BEM FEB UNAIR
+                </h4>
+                <p class="text-sm text-gray-400 font-medium mt-1">
+                    Student Organization Website
+                </p>
+            </div>
+
+            <!-- Project Description -->
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                Official website for Student Executive Board of Faculty of Economics and Business, Airlangga University. Features event management, and members administration system.
+            </p>
+            
+            <!-- Tech Stack -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag px-3 py-1.5 bg-indigo-900/30 text-indigo-300 rounded-lg text-xs font-medium border border-indigo-700/30 hover:border-indigo-500/50 transition-colors duration-300">
+                    <i class="fab fa-php mr-1.5"></i>PHP
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                    <i class="fab fa-laravel mr-1.5"></i>Laravel
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-yellow-900/30 text-yellow-300 rounded-lg text-xs font-medium border border-yellow-700/30 hover:border-yellow-500/50 transition-colors duration-300">
+                    <i class="fab fa-js-square mr-1.5"></i>JavaScript
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-teal-900/30 text-teal-300 rounded-lg text-xs font-medium border border-teal-700/30 hover:border-teal-500/50 transition-colors duration-300">
+                    <i class="fab fa-bootstrap mr-1.5"></i>Tailwind CSS
+                </span>
+            </div>
+            
+            <!-- View Details Button -->
+            <a href="#" 
+               class="inline-flex items-center gap-3 text-indigo-400 font-medium text-sm group-hover:text-indigo-300 group-hover:gap-4 transition-all duration-300">
+                <span>View Details</span>
+                <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Website Project - LOVE YOUR PETS -->
+<div class="project-item website" data-category="website">
+    <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-emerald-500/50 card-hover">
+        <!-- Badge -->
+        <div class="absolute top-4 right-4 z-10">
+            <span class="badge flex items-center gap-1 px-3 py-1 bg-emerald-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-emerald-700/30">
+                <i class="fas fa-globe text-white"></i>
+                Website
+            </span>
+        </div>
+        
+        <!-- Project Content -->
+        <div class="p-6">
+            <!-- Project Image -->
+            <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                <img src="{{ asset('images/lyp.png') }}" 
+                     alt="Love Your Pets Website Preview"
+                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                     onerror="this.src='https://images.unsplash.com/photo-1596273315327-6f2a6f59f6c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <!-- Project Title -->
+            <div class="mb-4">
+                <h4 class="text-xl font-bold text-gray-300 group-hover:text-emerald-300 transition-colors duration-300">
+                    LOVE YOUR PETS
+                </h4>
+                <p class="text-sm text-gray-400 font-medium mt-1">
+                    Pet Care Community Platform
+                </p>
+            </div>
+
+            <!-- Project Description -->
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                A comprehensive pet care website with adoption listings, veterinary services, pet care tips, and community forum. Built with Java-based backend for robust performance.
+            </p>
+            
+            <!-- Tech Stack -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag px-3 py-1.5 bg-red-900/30 text-red-300 rounded-lg text-xs font-medium border border-red-700/30 hover:border-red-500/50 transition-colors duration-300">
+                    <i class="fab fa-java mr-1.5"></i>Java
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                    <i class="fas fa-leaf mr-1.5"></i>HTML
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-gray-900/30 text-gray-300 rounded-lg text-xs font-medium border border-gray-700/30 hover:border-brown-500/50 transition-colors duration-300">
+                    <i class="fab fa-js-square mr-1.5"></i>CSS
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-green-900/30 text-green-300 rounded-lg text-xs font-medium border border-green-700/30 hover:border-green-500/50 transition-colors duration-300">
+                    <i class="fas fa-database mr-1.5"></i>MySQL
+                </span>
+            </div>
+            
+            <!-- View Details Button -->
+            <a href="#" 
+               class="inline-flex items-center gap-3 text-emerald-400 font-medium text-sm group-hover:text-emerald-300 group-hover:gap-4 transition-all duration-300">
+                <span>View Details</span>
+                <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Website Project - VISCOUNT -->
+<div class="project-item website" data-category="website">
+    <div class="group relative overflow-hidden glass-effect rounded-2xl hover:shadow-2xl transition-all duration-500 border border-gray-700/50 hover:border-violet-500/50 card-hover">
+        <!-- Badge -->
+        <div class="absolute top-4 right-4 z-10">
+            <span class="badge flex items-center gap-1 px-3 py-1 bg-violet-900/40 backdrop-blur-sm rounded-full text-white text-xs font-semibold border border-violet-700/30">
+                <i class="fas fa-globe text-white"></i>
+                Website
+            </span>
+        </div>
+        
+        <!-- Project Content -->
+        <div class="p-6">
+            <!-- Project Image -->
+            <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
+                <img src="{{ asset('images/viscount.png') }}" 
+                     alt="Viscount Platform Preview"
+                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                     onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <!-- Project Title -->
+            <div class="mb-4">
+                <h4 class="text-xl font-bold text-gray-300 group-hover:text-violet-300 transition-colors duration-300">
+                    VISCOUNT
+                </h4>
+                <p class="text-sm text-gray-400 font-medium mt-1">
+                    Video Analytics & Crowd Monitoring Platform
+                </p>
+            </div>
+
+            <!-- Project Description -->
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                AI-powered crowd monitoring platform using video analytics to enhance public safety and operational efficiency in public spaces and events.
+            </p>
+            
+            <!-- Tech Stack -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-tag px-3 py-1.5 bg-blue-900/30 text-blue-300 rounded-lg text-xs font-medium border border-blue-700/30 hover:border-blue-500/50 transition-colors duration-300">
+                    <i class="fab fa-python mr-1.5"></i>Python
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-green-900/30 text-green-300 rounded-lg text-xs font-medium border border-green-700/30 hover:border-green-500/50 transition-colors duration-300">
+                    <i class="fas fa-brain mr-1.5"></i>CNN
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-red-900/30 text-red-300 rounded-lg text-xs font-medium border border-red-700/30 hover:border-red-500/50 transition-colors duration-300">
+                    <i class="fab fa-js-square mr-1.5"></i>JavaScript
+                </span>
+                <span class="tech-tag px-3 py-1.5 bg-cyan-900/30 text-cyan-300 rounded-lg text-xs font-medium border border-cyan-700/30 hover:border-cyan-500/50 transition-colors duration-300">
+                    <i class="fab fa-react mr-1.5"></i>Tailwind CSS
+                </span>
+            </div>
+            
+            <!-- View Details Button -->
+            <a href="#" 
+               class="inline-flex items-center gap-3 text-violet-400 font-medium text-sm group-hover:text-violet-300 group-hover:gap-4 transition-all duration-300">
+                <span>View Details</span>
+                <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-6 mb-6">
+                    <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-purple-500"></div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-suitcase text-blue-500 text-xl"></i>
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                            PROFESSIONAL EXPERIENCE
+                        </span>
+                        <i class="fas fa-briefcase text-purple-500 text-xl"></i>
+                    </div>
+                    <div class="w-16 h-[2px] bg-gradient-to-l from-transparent via-blue-500 to-purple-500"></div>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">
+                        WORK EXPERIENCE
+                    </span>
+                </h2>
+                
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    My professional journey through various roles and responsibilities
+                </p>
+            </div>
+
+            <!-- Flip Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <?php
+                    $experiences = [
+                        [
+                            'company' => 'Anakode.id',
+                            'role' => 'Coding Instructor',
+                            'period' => 'August 2025 – Present',
+                            'location' => 'Bogor, Indonesia',
+                            'description' => 'Teaching coding techniques to participants through interactive learning.',
+                            'color' => 'from-blue-700 to-blue-800',
+                            'icon' => 'fas fa-code',
+                            'details' => [
+                                'Teaching coding concepts using Scratch',
+                                'Python programming instructor',
+                                'Web development for applications',
+                                'Focus on problem-solving skills'
+                            ]
+                        ],
+                        [
+                            'company' => 'PT Arminareka Perdana',
+                            'role' => 'Freelance Graphic Designer',
+                            'period' => 'June 2023 – August 2023',
+                            'location' => 'Jakarta, Indonesia',
+                            'description' => 'Creating visual designs for Hajj and Umrah promotional materials.',
+                            'color' => 'from-purple-600 to-purple-700',
+                            'icon' => 'fas fa-palette',
+                            'details' => [
+                                'Designing miniature Ka\'bah',
+                                'Creating promotional materials',
+                                'Producing educational materials',
+                                'Event design coordination'
+                            ]
+                        ],
+                        [
+                            'company' => 'PT PrimaGraphia',
+                            'role' => 'Graphic Design Intern',
+                            'period' => 'March 2022 – June 2022',
+                            'location' => 'Jakarta, Indonesia',
+                            'description' => 'Internship focused on print and digital media design.',
+                            'color' => 'from-blue-600 to-blue-700',
+                            'icon' => 'fas fa-print',
+                            'details' => [
+                                'Creating graphics for print media',
+                                'Supporting marketing activities',
+                                'Assisting with artwork finalization',
+                                'Preparing design files for clients'
+                            ]
+                        ]
+                    ];
+                ?>
+
+                <?php foreach($experiences as $index => $exp): ?>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front of Card -->
+                        <div class="flip-card-front glass-effect rounded-2xl p-6 shadow-xl border border-gray-700/50">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-16 h-16 bg-gradient-to-br <?php echo $exp['color']; ?> rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                    <i class="<?php echo $exp['icon']; ?> text-white text-2xl"></i>
+                                </div>
+                                <span class="text-sm text-blue-400 font-medium bg-blue-900/20 px-3 py-1 rounded-full border border-blue-700/30">
+                                    <?php echo $exp['period']; ?>
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-300 mb-2">
+                                <?php echo $exp['company']; ?>
+                            </h3>
+                            <p class="text-blue-400 font-medium text-sm mb-1">
+                                <i class="fas fa-user-tie mr-2"></i>
+                                <?php echo $exp['role']; ?>
+                            </p>
+                            <p class="text-gray-500 text-xs mb-3 flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <?php echo $exp['location']; ?>
+                            </p>
+                            <p class="text-gray-400 text-sm mb-4">
+                                <?php echo $exp['description']; ?>
+                            </p>
+                            
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-gray-500">Flip for details <i class="fas fa-redo ml-1"></i></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Back of Card -->
+                        <div class="flip-card-back bg-gradient-to-br <?php echo $exp['color']; ?> rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2"><?php echo $exp['company']; ?></h3>
+                            <p class="text-white/90 text-sm mb-1"><?php echo $exp['role']; ?></p>
+                            <p class="text-white/80 text-xs mb-4"><?php echo $exp['location']; ?></p>
+                            <ul class="text-white/90 text-sm space-y-2 mb-4">
+                                <?php foreach($exp['details'] as $detail): ?>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span><?php echo $detail; ?></span>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-white/70"><i class="fas fa-undo mr-1"></i> Flip back</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20">
+        <!-- HAPUS ELEMEN DEKORATIF YANG MENGANGGU -->
+        <!-- <div class="absolute top-10 left-10 text-blue-700/10 text-8xl">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="absolute bottom-10 right-10 text-purple-500/10 text-8xl">
+            <i class="fas fa-award"></i>
+        </div> -->
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-6 mb-6">
+                    <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-purple-500"></div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-award text-blue-500 text-xl"></i>
+                        <span class="text-sm font-semibold text-blue-400 uppercase tracking-widest">
+                            AWARDS & ACHIEVEMENTS
+                        </span>
+                        <i class="fas fa-medal text-purple-500 text-xl"></i>
+                    </div>
+                    <div class="w-16 h-[2px] bg-gradient-to-l from-transparent via-blue-500 to-purple-500"></div>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">
+                        ACHIEVEMENTS
+                    </span>
+                </h2>
+                
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Awards and recognitions celebrating my journey and accomplishments
+                </p>
+            </div>
+
+            <!-- Awards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <?php
+                    $awards = [
+                        [
+                            'title' => 'Favorite Award',
+                            'subtitle' => 'Kartini Day Poster Competition (PKSE, Hasanuddin University)',
+                            'date' => '2025',
+                            'color' => 'from-blue-700 to-blue-600',
+                            'icon' => 'fas fa-heart',
+                            'ribbon' => 'blue'
+                        ],
+                        [
+                            'title' => 'Head of HRD Bureau',
+                            'subtitle' => 'Micro IT Student Association 2025',
+                            'date' => '2025',
+                            'color' => 'from-indigo-700 to-blue-600',
+                            'icon' => 'fas fa-users',
+                            'ribbon' => 'indigo'
+                        ],
+                        [
+                            'title' => '2nd Place',
+                            'subtitle' => 'AgriTechJam Competition (Himalkom IPB University)',
+                            'date' => '2024',
+                            'color' => 'from-blue-700 to-cyan-600',
+                            'icon' => 'fas fa-medal',
+                            'ribbon' => 'blue'
+                        ],
+                        [
+                            'title' => '3rd Place',
+                            'subtitle' => 'Graphic Design Skills Competition - Student Level',
+                            'date' => '2022',
+                            'color' => 'from-purple-700 to-purple-600',
+                            'icon' => 'fas fa-award',
+                            'ribbon' => 'purple'
+                        ],
+                        [
+                            'title' => 'Best Graduate',
+                            'subtitle' => 'Multimedia Department - SMKN 14 Jakarta',
+                            'date' => '2023',
+                            'color' => 'from-blue-600 to-blue-700',
+                            'icon' => 'fas fa-graduation-cap',
+                            'ribbon' => 'blue'
+                        ],
+                        [
+                            'title' => 'GEMASTIK Participant',
+                            'subtitle' => 'IPB University Representative - Game Application Development',
+                            'date' => '2025',
+                            'color' => 'from-emerald-700 to-teal-600',
+                            'icon' => 'fas fa-trophy',
+                            'ribbon' => 'green'
+                        ]
+                    ];
+                ?>
+
+                <?php foreach($awards as $index => $award): ?>
+                <div class="award-card" data-ribbon="<?php echo $award['ribbon']; ?>">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br <?php echo $award['color']; ?> rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="<?php echo $award['icon']; ?> text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            <?php echo $award['title']; ?>
+                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            <?php echo $award['subtitle']; ?>
+                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span><?php echo $award['date']; ?></span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div class="container mx-auto px-6">
+            <div class="glass-effect rounded-3xl p-12 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"></div>
+                
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to <span class="gradient-text">Collaborate</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                    Let's build innovative solutions together. Feel free to reach out for collaboration opportunities, projects, or just to connect!
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:ahmadhasanfaqih@gmail.com" class="px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center">
+                        <i class="fas fa-envelope mr-3"></i>
+                        Send Email
+                    </a>
+                    <a href="https://linkedin.com/in/ahmadhasanfaqih" class="px-10 py-4 glass-effect border border-gray-700 hover:border-blue-500 rounded-lg font-semibold text-lg transition-all">
+                        <i class="fab fa-linkedin mr-3"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+                
+                <p class="text-gray-400 mt-8">
+                    <i class="fas fa-clock mr-2"></i>
+                    I'll respond within 24 hours
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Ahmad Hasan Faqih Aulia</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        Software Engineering Student at IPB University | Graphic Designer | Full-Stack Developer
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Ahmad Hasan Faqih Aulia. All rights reserved.</p>
+                <p class="mt-2 text-sm">Building digital solutions with precision and innovation</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('button:last-child').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-full');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-gray-900');
+            nav.classList.toggle('p-6');
+            nav.classList.toggle('space-y-4');
+        });
+        
+        // Category Filtering for Portfolio
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.category-tab');
+            const projectItems = document.querySelectorAll('.project-item');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.classList.remove('bg-gradient-to-r', 'from-blue-700', 'to-blue-800');
+                        t.classList.add('glass-effect');
+                    });
+                    
+                    this.classList.add('active');
+                    this.classList.remove('glass-effect');
+                    this.classList.add('bg-gradient-to-r', 'from-blue-700', 'to-blue-800');
+                    
+                    const category = this.dataset.category;
+                    
+                    // Filter projects
+                    projectItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Animation Delays
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .animation-delay-100 { animation-delay: 100ms; }
+                .animation-delay-200 { animation-delay: 200ms; }
+                .animation-delay-300 { animation-delay: 300ms; }
+                .animation-delay-400 { animation-delay: 400ms; }
+                .animation-delay-500 { animation-delay: 500ms; }
+                .animation-delay-600 { animation-delay: 600ms; }
+                .animation-delay-700 { animation-delay: 700ms; }
+                .animation-delay-800 { animation-delay: 800ms; }
+                .animation-delay-900 { animation-delay: 900ms; }
+                .animation-delay-1000 { animation-delay: 1000ms; }
+                .animation-delay-1100 { animation-delay: 1100ms; }
+                .animation-delay-2000 { animation-delay: 2000ms; }
+                .animation-delay-4000 { animation-delay: 4000ms; }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
