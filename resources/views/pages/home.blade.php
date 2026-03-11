@@ -316,56 +316,57 @@
                     </div>
                 </div>
                 
-                <!-- Right Column - Profile -->
-                <div class="lg:w-5/12 flex justify-center lg:justify-end">
-                    <div class="w-full max-w-md relative">
-                        <!-- Profile Frame -->
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-20 animate-pulse"></div>
-                        
-                        <div class="relative glass-effect rounded-2xl p-8 shadow-2xl border border-gray-700/50">
-                            <!-- Profile Photo -->
-                            <div class="mb-8 relative">
-                                <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-md opacity-30"></div>
-                                <div class="relative rounded-2xl overflow-hidden border-2 border-blue-500/30 shadow-2xl">
-                                    <img src="{{ asset('images/foto1.png') }}" 
-                                         alt="Ahmad Hasan Faqih Aulia"
-                                         class="w-full aspect-square object-cover object-center"
-                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    
-                                    <div class="w-full aspect-square hidden items-center justify-center bg-gradient-to-br from-blue-700 to-purple-800">
-                                        <i class="fas fa-user text-white text-6xl"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Name and Title -->
-                            <div class="mb-8 text-center relative">
-                                <h3 class="text-2xl font-bold text-gray-300 mb-2">
-                                    Ahmad Hasan Faqih Aulia 
-                                </h3>
-                                <p class="text-xl gradient-text font-semibold">
-                                    Software Engineer
-                                </p>
-                            </div>
-                            
-                            <!-- University Info -->
-                            <div class="glass-effect p-6 rounded-xl border border-gray-700/50">
-                                <div class="text-center mb-4">
-                                    <h4 class="text-lg font-semibold text-gray-300">IPB University</h4>
-                                    <p class="text-gray-400">Software Engineering Technology</p>
-                                </div>
-                                <div class="flex justify-center gap-4">
-                                    <span class="text-sm px-4 py-2 bg-blue-900/30 text-blue-300 rounded-lg border border-blue-700/50">
-                                        <i class="fas fa-book mr-2"></i>
-                                        Active Student
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+               <!-- Right Column - Profile -->
+<div class="lg:w-5/12 flex justify-center lg:justify-end">
+    <div class="w-full max-w-md relative">
+        <!-- Soft glow with subtle pulse animation -->
+        <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-md opacity-30 animate-pulse"></div>
+        
+        <div class="relative bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-600/50">
+            <!-- Profile Photo with subtle glow -->
+            <div class="mb-8 relative">
+                <!-- Inner glow dengan pulse lebih lambat untuk variasi -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-sm opacity-30 animate-pulse" style="animation-duration: 3s;"></div>
+                <div class="relative rounded-xl overflow-hidden border border-gray-600/50 shadow-xl">
+                    <img src="{{ asset('images/foto1.png') }}" 
+                         alt="Ahmad Hasan Faqih Aulia"
+                         class="w-full aspect-square object-cover object-center"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    
+                    <div class="w-full aspect-square hidden items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700">
+                        <i class="fas fa-user text-white text-6xl"></i>
                     </div>
                 </div>
             </div>
+            
+            <!-- Name and Title -->
+            <div class="mb-8 text-center">
+                <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                    Ahmad Hasan Faqih Aulia 
+                </h3>
+                <!-- Title with subtle glow animation -->
+                <p class="text-xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold animate-pulse" style="animation-duration: 4s;">
+                    Software Engineer
+                </p>
+            </div>
+            
+            <!-- University Info with subtle glass effect -->
+            <div class="bg-gray-900/40 backdrop-blur-sm p-6 rounded-xl border border-gray-600/50 shadow-inner">
+                <div class="text-center mb-4">
+                    <h4 class="text-lg font-semibold text-gray-200">IPB University</h4>
+                    <p class="text-gray-400">Software Engineering Technology</p>
+                </div>
+                <div class="flex justify-center">
+                    <!-- Badge with its own pulse -->
+                    <span class="text-sm px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 rounded-lg border border-blue-500/30 shadow-sm hover:scale-105 transition-transform duration-300 animate-pulse" style="animation-duration: 2.5s;">
+                        <i class="fas fa-book mr-2"></i>
+                        Active Student
+                    </span>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
     </section>
     
     <!-- Education Section -->
@@ -543,7 +544,7 @@
                             <div>
                                 <div class="flex justify-between mb-1">
                                     <span class="text-sm text-gray-400">Frontend Development</span>
-                                    <span class="text-sm text-blue-400">90%</span>
+                                    <span class="text-sm text-blue-400">85%</span>
                                 </div>
                                 <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
                                     <div class="h-full bg-gradient-to-r from-blue-600 to-purple-500 rounded-full" style="width: 90%"></div>
@@ -552,7 +553,7 @@
                             <div>
                                 <div class="flex justify-between mb-1">
                                     <span class="text-sm text-gray-400">Backend Development</span>
-                                    <span class="text-sm text-blue-400">85%</span>
+                                    <span class="text-sm text-blue-400">75%</span>
                                 </div>
                                 <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
                                     <div class="h-full bg-gradient-to-r from-blue-600 to-purple-500 rounded-full" style="width: 85%"></div>
@@ -684,7 +685,7 @@
                         </div>
                         
                         <!-- View Details Button -->
-                        <a href="#" 
+                        <a href="https://drive.google.com/drive/folders/1MkZIscjV-Zuk21l46hcyBs9SnPngPr1j?usp=sharing" 
                            class="inline-flex items-center gap-3 text-blue-400 font-medium text-sm group-hover:text-blue-300 group-hover:gap-4 transition-all duration-300">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -747,7 +748,7 @@
                         </div>
                         
                         <!-- View Details Button -->
-                        <a href="#" 
+                        <a href="https://s.id/portfolio-creative-hsnfqh" 
                            class="inline-flex items-center gap-3 text-pink-400 font-medium text-sm group-hover:text-pink-300 group-hover:gap-4 transition-all duration-300">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -804,7 +805,7 @@
                         </div>
                         
                         <!-- View Details Button -->
-                        <a href="#" 
+                        <a href="https://drive.google.com/drive/folders/17O11ChDGc4rCBac3kJQxWUIc1Tkiy0qc?usp=sharing" 
                            class="inline-flex items-center gap-3 text-purple-400 font-medium text-sm group-hover:text-purple-300 group-hover:gap-4 transition-all duration-300">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -868,7 +869,7 @@
                         </div>
                         
                         <!-- View Details Button -->
-                        <a href="#" 
+                        <a href="https://drive.google.com/file/d/19Wf-4ebW7RQWS2SxVVlYu3v_NQO3k-9y/view" 
                            class="inline-flex items-center gap-3 text-green-400 font-medium text-sm group-hover:text-green-300 group-hover:gap-4 transition-all duration-300">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -931,7 +932,7 @@
                         </div>
                         
                         <!-- View Details Button -->
-                        <a href="#" 
+                        <a href="https://paudbougenville.my.id/" 
                            class="inline-flex items-center gap-3 text-cyan-400 font-medium text-sm group-hover:text-cyan-300 group-hover:gap-4 transition-all duration-300">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -994,7 +995,7 @@
             </div>
             
             <!-- View Details Button -->
-            <a href="#" 
+            <a href="https://bemfebunair25.my.id/" 
                class="inline-flex items-center gap-3 text-indigo-400 font-medium text-sm group-hover:text-indigo-300 group-hover:gap-4 transition-all duration-300">
                 <span>View Details</span>
                 <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -1057,7 +1058,7 @@
             </div>
             
             <!-- View Details Button -->
-            <a href="#" 
+            <a href="https://lyp-api-puce.vercel.app/" 
                class="inline-flex items-center gap-3 text-emerald-400 font-medium text-sm group-hover:text-emerald-300 group-hover:gap-4 transition-all duration-300">
                 <span>View Details</span>
                 <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
@@ -1120,7 +1121,7 @@
             </div>
             
             <!-- View Details Button -->
-            <a href="#" 
+            <a href="https://viscountdetection.onrender.com/" 
                class="inline-flex items-center gap-3 text-violet-400 font-medium text-sm group-hover:text-violet-300 group-hover:gap-4 transition-all duration-300">
                 <span>View Details</span>
                 <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
