@@ -231,7 +231,7 @@
             </nav>
             
             <div class="flex items-center space-x-4">
-                <a href="{{ asset('cv.pdf') }}" download class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center">
+                <a href="http://localhost/cv.pdf" download class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl flex items-center">
                     <i class="fas fa-download mr-2"></i> Download CV
                 </a>
                 <button class="md:hidden text-xl">
@@ -328,7 +328,7 @@
                 <!-- Inner glow dengan pulse lebih lambat untuk variasi -->
                 <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-sm opacity-30 animate-pulse" style="animation-duration: 3s;"></div>
                 <div class="relative rounded-xl overflow-hidden border border-gray-600/50 shadow-xl">
-                    <img src="{{ asset('images/foto1.png') }}" 
+                    <img src="http://localhost/images/foto1.png" 
                          alt="Ahmad Hasan Faqih Aulia"
                          class="w-full aspect-square object-cover object-center"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -502,37 +502,140 @@
                     
                     <!-- Skills Grid -->
                     <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-4">
-                        <?php
-                            $skills = [
-                                ['name' => 'Java', 'color' => 'from-orange-700 to-red-600', 'icon' => 'fab fa-java', 'delay' => '0'],
-                                ['name' => 'JavaScript', 'color' => 'from-yellow-600 to-yellow-400', 'icon' => 'fab fa-js', 'delay' => '100'],
-                                ['name' => 'Tailwind', 'color' => 'from-cyan-600 to-blue-600', 'icon' => 'fas fa-wind', 'delay' => '200'],
-                                ['name' => 'Laravel', 'color' => 'from-red-600 to-orange-600', 'icon' => 'fab fa-laravel', 'delay' => '300'],
-                                ['name' => 'React', 'color' => 'from-blue-500 to-cyan-500', 'icon' => 'fab fa-react', 'delay' => '400'],
-                                ['name' => 'Blender', 'color' => 'from-orange-600 to-yellow-600', 'icon' => 'fas fa-cube', 'delay' => '500'],
-                                ['name' => 'Unity', 'color' => 'from-gray-700 to-gray-500', 'icon' => 'fas fa-gamepad', 'delay' => '600'],
-                                ['name' => 'Figma', 'color' => 'from-blue-600 to-blue-400', 'icon' => 'fas fa-palette', 'delay' => '700'],
-                                ['name' => 'Canvas', 'color' => 'from-green-600 to-green-400', 'icon' => 'fas fa-paint-brush', 'delay' => '800'],
-                                ['name' => 'Photoshop', 'color' => 'from-blue-700 to-blue-500', 'icon' => 'fas fa-image', 'delay' => '900'],
-                                ['name' => 'Premiere', 'color' => 'from-blue-700 to-blue-500', 'icon' => 'fas fa-video', 'delay' => '1000'],
-                                ['name' => 'After Effect', 'color' => 'from-indigo-700 to-blue-600', 'icon' => 'fas fa-film', 'delay' => '1100'],
-                            ];
-                        ?>
-                        
-                        <?php foreach($skills as $skill): ?>
-                        <div class="animate-float animation-delay-<?php echo $skill['delay']; ?>">
+                                                
+                                                <div class="animate-float animation-delay-0">
                             <div class="group relative">
-                                <div class="absolute inset-0 bg-gradient-to-br <?php echo $skill['color']; ?> rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-700 to-red-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                                 <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
-                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br <?php echo $skill['color']; ?> rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                                        <i class="<?php echo $skill['icon']; ?> text-white text-lg"></i>
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-orange-700 to-red-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fab fa-java text-white text-lg"></i>
                                     </div>
-                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300"><?php echo $skill['name']; ?></p>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Java</p>
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
-                    </div>
+                                                <div class="animate-float animation-delay-100">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-yellow-600 to-yellow-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-yellow-600 to-yellow-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fab fa-js text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">JavaScript</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-200">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-wind text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Tailwind</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-300">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-red-600 to-orange-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-red-600 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fab fa-laravel text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Laravel</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-400">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fab fa-react text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">React</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-500">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-600 to-yellow-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-orange-600 to-yellow-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-cube text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Blender</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-600">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-gray-700 to-gray-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-gamepad text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Unity</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-700">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-palette text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Figma</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-800">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-green-600 to-green-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-paint-brush text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Canvas</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-900">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-image text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Photoshop</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-1000">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-video text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">Premiere</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="animate-float animation-delay-1100">
+                            <div class="group relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-700 to-blue-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                <div class="relative glass-effect rounded-xl p-4 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50">
+                                    <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-indigo-700 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                        <i class="fas fa-film text-white text-lg"></i>
+                                    </div>
+                                    <p class="font-semibold text-gray-300 text-xs group-hover:text-blue-400 transition-colors duration-300">After Effect</p>
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
                     
                     <!-- Skill Levels -->
                     <div class="mt-12 glass-effect rounded-2xl p-6 border border-gray-700/50">
@@ -649,7 +752,7 @@
                     <div class="p-6">
                         <!-- Project Image -->
                         <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                            <img src="{{ asset('images/fruitclash.png') }}" 
+                            <img src="http://localhost/images/fruitclash.png" 
                                 alt="Fruit Clash Application Preview"
                                 class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 onerror="this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -709,7 +812,7 @@
                     <div class="p-6">
                         <!-- Project Image -->
                         <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                            <img src="{{ asset('images/portfolio1.png') }}" 
+                            <img src="http://localhost/images/portfolio1.png" 
                                  alt="Best Graphic Design Preview"
                                  class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                                  onerror="this.src='https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -772,7 +875,7 @@
                     <div class="p-6">
                         <!-- Project Image -->
                         <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                            <img src="{{ asset('images/arka.png') }}" 
+                            <img src="http://localhost/images/arka.png" 
                                 alt="Website Roblox Topic Indonesia Design Preview"
                                 class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -830,7 +933,7 @@
                     <div class="p-6">
                         <!-- Project Image -->
                         <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                            <img src="{{ asset('images/career.png') }}" 
+                            <img src="http://localhost/images/career.png" 
                                 alt="Cooperative Management Application Preview"
                                 class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -893,7 +996,7 @@
                     <div class="p-6">
                         <!-- Project Image -->
                         <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                            <img src="{{ asset('images/web.png') }}" 
+                            <img src="http://localhost/images/web.png" 
                                  alt="Paud Bougenville Website Preview"
                                  class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                                  onerror="this.src='https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -956,7 +1059,7 @@
         <div class="p-6">
             <!-- Project Image -->
             <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                <img src="{{ asset('images/bem.png') }}" 
+                <img src="http://localhost/images/bem.png" 
                      alt="BEM FEB UNAIR Website Preview"
                      class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                      onerror="this.src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -1019,7 +1122,7 @@
         <div class="p-6">
             <!-- Project Image -->
             <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                <img src="{{ asset('images/lyp.png') }}" 
+                <img src="http://localhost/images/lyp.png" 
                      alt="Love Your Pets Website Preview"
                      class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                      onerror="this.src='https://images.unsplash.com/photo-1596273315327-6f2a6f59f6c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -1082,7 +1185,7 @@
         <div class="p-6">
             <!-- Project Image -->
             <div class="mb-6 rounded-xl overflow-hidden border border-gray-800/50 shadow-inner">
-                <img src="{{ asset('images/viscount.png') }}" 
+                <img src="http://localhost/images/viscount.png" 
                      alt="Viscount Platform Preview"
                      class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700"
                      onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
@@ -1164,84 +1267,29 @@
 
             <!-- Flip Cards Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php
-                    $experiences = [
-                        [
-                            'company' => 'Anakode.id',
-                            'role' => 'Coding Instructor',
-                            'period' => 'August 2025 – Present',
-                            'location' => 'Bogor, Indonesia',
-                            'description' => 'Teaching coding techniques to participants through interactive learning.',
-                            'color' => 'from-blue-700 to-blue-800',
-                            'icon' => 'fas fa-code',
-                            'details' => [
-                                'Teaching coding concepts using Scratch',
-                                'Python programming instructor',
-                                'Web development for applications',
-                                'Focus on problem-solving skills'
-                            ]
-                        ],
-                        [
-                            'company' => 'PT Arminareka Perdana',
-                            'role' => 'Freelance Graphic Designer',
-                            'period' => 'June 2023 – August 2023',
-                            'location' => 'Jakarta, Indonesia',
-                            'description' => 'Creating visual designs for Hajj and Umrah promotional materials.',
-                            'color' => 'from-purple-600 to-purple-700',
-                            'icon' => 'fas fa-palette',
-                            'details' => [
-                                'Designing miniature Ka\'bah',
-                                'Creating promotional materials',
-                                'Producing educational materials',
-                                'Event design coordination'
-                            ]
-                        ],
-                        [
-                            'company' => 'PT PrimaGraphia',
-                            'role' => 'Graphic Design Intern',
-                            'period' => 'March 2022 – June 2022',
-                            'location' => 'Jakarta, Indonesia',
-                            'description' => 'Internship focused on print and digital media design.',
-                            'color' => 'from-blue-600 to-blue-700',
-                            'icon' => 'fas fa-print',
-                            'details' => [
-                                'Creating graphics for print media',
-                                'Supporting marketing activities',
-                                'Assisting with artwork finalization',
-                                'Preparing design files for clients'
-                            ]
-                        ]
-                    ];
-                ?>
-
-                <?php foreach($experiences as $index => $exp): ?>
-                <div class="flip-card">
+                
+                                <div class="flip-card">
                     <div class="flip-card-inner">
                         <!-- Front of Card -->
                         <div class="flip-card-front glass-effect rounded-2xl p-6 shadow-xl border border-gray-700/50">
                             <div class="flex items-start justify-between mb-4">
-                                <div class="w-16 h-16 bg-gradient-to-br <?php echo $exp['color']; ?> rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                                    <i class="<?php echo $exp['icon']; ?> text-white text-2xl"></i>
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                    <i class="fas fa-code text-white text-2xl"></i>
                                 </div>
                                 <span class="text-sm text-blue-400 font-medium bg-blue-900/20 px-3 py-1 rounded-full border border-blue-700/30">
-                                    <?php echo $exp['period']; ?>
-                                </span>
+                                    August 2025 – Present                                </span>
                             </div>
                             
                             <h3 class="text-xl font-bold text-gray-300 mb-2">
-                                <?php echo $exp['company']; ?>
-                            </h3>
+                                Anakode.id                            </h3>
                             <p class="text-blue-400 font-medium text-sm mb-1">
                                 <i class="fas fa-user-tie mr-2"></i>
-                                <?php echo $exp['role']; ?>
-                            </p>
+                                Coding Instructor                            </p>
                             <p class="text-gray-500 text-xs mb-3 flex items-center gap-1">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <?php echo $exp['location']; ?>
-                            </p>
+                                Bogor, Indonesia                            </p>
                             <p class="text-gray-400 text-sm mb-4">
-                                <?php echo $exp['description']; ?>
-                            </p>
+                                Teaching coding techniques to participants through interactive learning.                            </p>
                             
                             <div class="text-center mt-4">
                                 <span class="text-xs text-gray-500">Flip for details <i class="fas fa-redo ml-1"></i></span>
@@ -1249,26 +1297,149 @@
                         </div>
                         
                         <!-- Back of Card -->
-                        <div class="flip-card-back bg-gradient-to-br <?php echo $exp['color']; ?> rounded-2xl p-6 text-white">
-                            <h3 class="text-xl font-bold mb-2"><?php echo $exp['company']; ?></h3>
-                            <p class="text-white/90 text-sm mb-1"><?php echo $exp['role']; ?></p>
-                            <p class="text-white/80 text-xs mb-4"><?php echo $exp['location']; ?></p>
+                        <div class="flip-card-back bg-gradient-to-br from-blue-700 to-blue-800 rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">Anakode.id</h3>
+                            <p class="text-white/90 text-sm mb-1">Coding Instructor</p>
+                            <p class="text-white/80 text-xs mb-4">Bogor, Indonesia</p>
                             <ul class="text-white/90 text-sm space-y-2 mb-4">
-                                <?php foreach($exp['details'] as $detail): ?>
-                                <li class="flex items-start gap-3">
+                                                                <li class="flex items-start gap-3">
                                     <i class="fas fa-chevron-right text-white mt-1"></i>
-                                    <span><?php echo $detail; ?></span>
+                                    <span>Teaching coding concepts using Scratch</span>
                                 </li>
-                                <?php endforeach; ?>
-                            </ul>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Python programming instructor</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Web development for applications</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Focus on problem-solving skills</span>
+                                </li>
+                                                            </ul>
                             <div class="text-center mt-4">
                                 <span class="text-xs text-white/70"><i class="fas fa-undo mr-1"></i> Flip back</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front of Card -->
+                        <div class="flip-card-front glass-effect rounded-2xl p-6 shadow-xl border border-gray-700/50">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                    <i class="fas fa-palette text-white text-2xl"></i>
+                                </div>
+                                <span class="text-sm text-blue-400 font-medium bg-blue-900/20 px-3 py-1 rounded-full border border-blue-700/30">
+                                    June 2023 – August 2023                                </span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-300 mb-2">
+                                PT Arminareka Perdana                            </h3>
+                            <p class="text-blue-400 font-medium text-sm mb-1">
+                                <i class="fas fa-user-tie mr-2"></i>
+                                Freelance Graphic Designer                            </p>
+                            <p class="text-gray-500 text-xs mb-3 flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Jakarta, Indonesia                            </p>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Creating visual designs for Hajj and Umrah promotional materials.                            </p>
+                            
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-gray-500">Flip for details <i class="fas fa-redo ml-1"></i></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Back of Card -->
+                        <div class="flip-card-back bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">PT Arminareka Perdana</h3>
+                            <p class="text-white/90 text-sm mb-1">Freelance Graphic Designer</p>
+                            <p class="text-white/80 text-xs mb-4">Jakarta, Indonesia</p>
+                            <ul class="text-white/90 text-sm space-y-2 mb-4">
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Designing miniature Ka'bah</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Creating promotional materials</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Producing educational materials</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Event design coordination</span>
+                                </li>
+                                                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-white/70"><i class="fas fa-undo mr-1"></i> Flip back</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front of Card -->
+                        <div class="flip-card-front glass-effect rounded-2xl p-6 shadow-xl border border-gray-700/50">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                    <i class="fas fa-print text-white text-2xl"></i>
+                                </div>
+                                <span class="text-sm text-blue-400 font-medium bg-blue-900/20 px-3 py-1 rounded-full border border-blue-700/30">
+                                    March 2022 – June 2022                                </span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-300 mb-2">
+                                PT PrimaGraphia                            </h3>
+                            <p class="text-blue-400 font-medium text-sm mb-1">
+                                <i class="fas fa-user-tie mr-2"></i>
+                                Graphic Design Intern                            </p>
+                            <p class="text-gray-500 text-xs mb-3 flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Jakarta, Indonesia                            </p>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Internship focused on print and digital media design.                            </p>
+                            
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-gray-500">Flip for details <i class="fas fa-redo ml-1"></i></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Back of Card -->
+                        <div class="flip-card-back bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">PT PrimaGraphia</h3>
+                            <p class="text-white/90 text-sm mb-1">Graphic Design Intern</p>
+                            <p class="text-white/80 text-xs mb-4">Jakarta, Indonesia</p>
+                            <ul class="text-white/90 text-sm space-y-2 mb-4">
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Creating graphics for print media</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Supporting marketing activities</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Assisting with artwork finalization</span>
+                                </li>
+                                                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chevron-right text-white mt-1"></i>
+                                    <span>Preparing design files for clients</span>
+                                </li>
+                                                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="text-xs text-white/70"><i class="fas fa-undo mr-1"></i> Flip back</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            </div>
         </div>
     </section>
     
@@ -1310,90 +1481,164 @@
 
             <!-- Awards Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php
-                    $awards = [
-                        [
-                            'title' => 'Favorite Award',
-                            'subtitle' => 'Kartini Day Poster Competition (PKSE, Hasanuddin University)',
-                            'date' => '2025',
-                            'color' => 'from-blue-700 to-blue-600',
-                            'icon' => 'fas fa-heart',
-                            'ribbon' => 'blue'
-                        ],
-                        [
-                            'title' => 'Head of HRD Bureau',
-                            'subtitle' => 'Micro IT Student Association 2025',
-                            'date' => '2025',
-                            'color' => 'from-indigo-700 to-blue-600',
-                            'icon' => 'fas fa-users',
-                            'ribbon' => 'indigo'
-                        ],
-                        [
-                            'title' => '2nd Place',
-                            'subtitle' => 'AgriTechJam Competition (Himalkom IPB University)',
-                            'date' => '2024',
-                            'color' => 'from-blue-700 to-cyan-600',
-                            'icon' => 'fas fa-medal',
-                            'ribbon' => 'blue'
-                        ],
-                        [
-                            'title' => '3rd Place',
-                            'subtitle' => 'Graphic Design Skills Competition - Student Level',
-                            'date' => '2022',
-                            'color' => 'from-purple-700 to-purple-600',
-                            'icon' => 'fas fa-award',
-                            'ribbon' => 'purple'
-                        ],
-                        [
-                            'title' => 'Best Graduate',
-                            'subtitle' => 'Multimedia Department - SMKN 14 Jakarta',
-                            'date' => '2023',
-                            'color' => 'from-blue-600 to-blue-700',
-                            'icon' => 'fas fa-graduation-cap',
-                            'ribbon' => 'blue'
-                        ],
-                        [
-                            'title' => 'GEMASTIK Participant',
-                            'subtitle' => 'IPB University Representative - Game Application Development',
-                            'date' => '2025',
-                            'color' => 'from-emerald-700 to-teal-600',
-                            'icon' => 'fas fa-trophy',
-                            'ribbon' => 'green'
-                        ]
-                    ];
-                ?>
-
-                <?php foreach($awards as $index => $award): ?>
-                <div class="award-card" data-ribbon="<?php echo $award['ribbon']; ?>">
+                
+                                <div class="award-card" data-ribbon="blue">
                     <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
                         
                         <!-- Award Icon -->
-                        <div class="w-20 h-20 bg-gradient-to-br <?php echo $award['color']; ?> rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
-                            <i class="<?php echo $award['icon']; ?> text-white text-3xl"></i>
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-700 to-blue-600 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-heart text-white text-3xl"></i>
                         </div>
                         
                         <!-- Award Title -->
                         <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
-                            <?php echo $award['title']; ?>
-                        </h3>
+                            Favorite Award                        </h3>
                         
                         <!-- Award Description -->
                         <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
-                            <?php echo $award['subtitle']; ?>
-                        </p>
+                            Kartini Day Poster Competition (PKSE, Hasanuddin University)                        </p>
                         
                         <!-- Award Date -->
                         <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
                             <i class="fas fa-calendar-alt"></i>
-                            <span><?php echo $award['date']; ?></span>
+                            <span>2025</span>
                         </div>
                         
                         <!-- Decorative Border on Hover -->
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
                     </div>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="award-card" data-ribbon="indigo">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br from-indigo-700 to-blue-600 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-users text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            Head of HRD Bureau                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            Micro IT Student Association 2025                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025</span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                                <div class="award-card" data-ribbon="blue">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-700 to-cyan-600 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-medal text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            2nd Place                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            AgriTechJam Competition (Himalkom IPB University)                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2024</span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                                <div class="award-card" data-ribbon="purple">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-700 to-purple-600 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-award text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            3rd Place                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            Graphic Design Skills Competition - Student Level                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2022</span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                                <div class="award-card" data-ribbon="blue">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            Best Graduate                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            Multimedia Department - SMKN 14 Jakarta                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2023</span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                                <div class="award-card" data-ribbon="green">
+                    <div class="relative h-full glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700/50 group card-hover">
+                        
+                        <!-- Award Icon -->
+                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-700 to-teal-600 rounded-2xl flex items-center justify-center mb-5 transform group-hover:scale-110 transition-transform duration-500 shadow-xl mx-auto">
+                            <i class="fas fa-trophy text-white text-3xl"></i>
+                        </div>
+                        
+                        <!-- Award Title -->
+                        <h3 class="text-xl font-bold text-gray-300 mb-3 text-center">
+                            GEMASTIK Participant                        </h3>
+                        
+                        <!-- Award Description -->
+                        <p class="text-gray-400 text-sm italic mb-5 text-center leading-relaxed">
+                            IPB University Representative - Game Application Development                        </p>
+                        
+                        <!-- Award Date -->
+                        <div class="flex items-center justify-center gap-3 text-blue-400 font-medium">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025</span>
+                        </div>
+                        
+                        <!-- Decorative Border on Hover -->
+                        <div class="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/20 rounded-2xl transition-all duration-500"></div>
+                    </div>
+                </div>
+                            </div>
         </div>
     </section>
     
